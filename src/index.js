@@ -276,6 +276,10 @@ function checkPatternMatch() {
       if (matchesPattern(startRow, startCol)) {
         clearPattern(startRow, startCol);
         score += 100;
+        patternsCleared++;
+        if (patternsCleared % 5 === 0) {
+          level++;
+        }
         updateScore();
         setNewTargetPattern();
         return;
